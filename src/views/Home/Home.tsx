@@ -74,7 +74,7 @@ const Home: React.FC = () => {
         <Heading as="h1" size="xl" mb="24px" color="secondary">
           {TranslateString(576, 'Alchemist Defi')}
         </Heading>
-        <Text>{TranslateString(578, 'Top 1 app to turn crypto into gold!.')}</Text>
+        <Text>{TranslateString(999, 'Your alchemy lab, turning crypto into Mist and Digital Gold')}</Text>
       </Hero>
       <div>
         <Cards>
