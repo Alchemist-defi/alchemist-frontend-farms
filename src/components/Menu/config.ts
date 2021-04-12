@@ -64,6 +64,11 @@ const config: MenuEntry[] = [
       },
     ],
   },
+  {
+    label: 'TechRate Audit',
+    icon: 'AuditIcon',
+    href: 'https://alchemist-defi.com/TechrateAudit11042021',
+  },  
 ]
 
 export default config
