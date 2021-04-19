@@ -23,3 +23,9 @@ export const getLotteryTicketAddress = () => {
 export const getReferralAddress = () => {
   return addresses.referral[chainId]
 }
+export const getAurumAddress = () => {
+  return addresses.aurum[chainId]
+}
+export const getAurumMasterChefAddress = () => {
+  return addresses.aurumMasterChef[chainId]
+}

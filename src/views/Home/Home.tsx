@@ -8,6 +8,7 @@ import Page from 'components/layout/Page'
 import FarmStakingCard from './components/FarmStakingCard'
 import LotteryCard from './components/LotteryCard'
 import CakeStats from './components/CakeStats'
+import AurumStats from './components/AurumStats'
 import TotalValueLockedCard from './components/TotalValueLockedCard'
 import TwitterCard from './components/TwitterCard'
 import rot13 from '../../utils/encode'
@@ -31,6 +32,26 @@ const Hero = styled.div`
     background-position: left center, right center;
     height: 165px;
     padding-top: 0;
+  }  
+`
+
+const CardCombined = styled(BaseLayout)`
+  align-items: stretch;
+  justify-content: stretch;
+  margin-bottom: 32px;
+  & > div {
+    grid-column: span 12;
+    width: 100%;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 8;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    & > div {
+      grid-column: span 12;
+    }
   }
 `
 
@@ -57,6 +78,8 @@ const Cards = styled(BaseLayout)`
   }
 `
 
+
+
 const Home: React.FC = () => {
     const TranslateString = useI18n()
     const cookies = new Cookies();
@@ -79,10 +102,16 @@ const Home: React.FC = () => {
       <div>
         <Cards>
           <FarmStakingCard />
-          <TwitterCard/>
-          <CakeStats />
-          <TotalValueLockedCard />
+          <TwitterCard />
         </Cards>
+        <Cards>
+          <CakeStats />
+          <AurumStats />
+        </Cards>
+        <CardCombined>
+            <TotalValueLockedCard />
+        </CardCombined>
+        
       </div>
     </Page>
   )

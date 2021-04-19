@@ -30,5 +30,17 @@ export default {
   referral: {
     56: '0x6b0BB4F7A150dedcDe4cE5D66BA923b4194De283',
     97: '',
+  },
+  mist: {
+    56: '0x6f8FE12CC34398d15b7D5A5BA933E550DA1D099f',
+    97: '',
+  },
+  aurum: {
+    56: '0x49207BAA3a7332F0716788aa57B088D499bcc104',
+    97: '',
+  } ,
+  aurumMasterChef: {
+    56: '0x193765551a49eAD3aA8C693F19C4501710cD874d',
+    97: '',
   }
 }
