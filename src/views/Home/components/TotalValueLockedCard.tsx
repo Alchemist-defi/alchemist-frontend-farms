@@ -65,6 +65,14 @@ const TotalValueLockedCard = () => {
           {TranslateString(999, 'Alchemist Defi Project Stats')}
         </Heading>
         <Row>
+          <Text fontSize="18px">{TranslateString(999, 'MIST TVL')}</Text>          
+          <CardValue fontSize="18px" value={mistTotalValue.toNumber()} prefix="$" decimals={0}/>          
+        </Row>
+        <Row>
+          <Text fontSize="18px">{TranslateString(999, 'Aurum TVL')}</Text>          
+          <CardValue fontSize="18px" value={aurumTotalValue.toNumber()} prefix="$" decimals={0}/>          
+        </Row>
+        <Row>
           <Text fontSize="18px">{TranslateString(999, 'Total TVL')}</Text>          
           <CardValue fontSize="18px" value={consolidatedTotalValue.toNumber()} prefix="$" decimals={0}/>          
         </Row>

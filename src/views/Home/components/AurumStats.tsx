@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
 import BigNumber from 'bignumber.js/bignumber'
 import styled from 'styled-components'
-import { getBalanceNumber } from 'utils/formatBalance'
+import { getActualValueInDecimal, getBalanceNumber } from 'utils/formatBalance'
 import { useAurumTotalSupply, useAurumBurnedBalance } from 'hooks/useAurumTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getAurumAddress } from 'utils/addressHelpers'
@@ -30,7 +30,7 @@ const AurumStats = () => {
   const aurumPrice = usePriceAurumBusd();      
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0);
   const aurumSupply = getBalanceNumber(circSupply);
-  const marketCap = aurumPrice.times(circSupply);
+  const marketCap = aurumPrice.times(circSupply)
 
   let aurumPerBlock = 0;
   if(aurumFarms && aurumFarms[0] && aurumFarms[0].aurumPerBlock){
@@ -43,6 +43,10 @@ const AurumStats = () => {
         <Heading size="xl" mb="24px">
           {TranslateString(999, 'Aurum Stats')}
         </Heading>
+        <Row>
+          <Text fontSize="14px">{TranslateString(999, 'Aurum Price')}</Text>
+          <CardValue fontSize="14px" value={getActualValueInDecimal(aurumPrice)} decimals={2} prefix="$" />          
+        </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(10005, 'Market Cap')}</Text>
           <CardValue fontSize="14px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />

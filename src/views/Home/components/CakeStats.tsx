@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
 import BigNumber from 'bignumber.js/bignumber'
 import styled from 'styled-components'
-import { getBalanceNumber } from 'utils/formatBalance'
+import { getBalanceNumber, getActualValueInDecimal } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getCakeAddress } from 'utils/addressHelpers'
@@ -43,6 +43,10 @@ const CakeStats = () => {
         <Heading size="xl" mb="24px">
           {TranslateString(534, 'Mist Stats')}
         </Heading>
+        <Row>
+          <Text fontSize="14px">{TranslateString(999, 'Mist Price')}</Text>
+          <CardValue fontSize="14px" value={getActualValueInDecimal(eggPrice)} decimals={3} prefix="$" />
+        </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(10005, 'Market Cap')}</Text>
           <CardValue fontSize="14px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />
