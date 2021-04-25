@@ -127,7 +127,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
 
   return (
     <FCard>
-      {farm.tokenSymbol === 'MIST' && <StyledCardAccent />}
+      {(farm.tokenSymbol === 'MIST' || farm.tokenSymbol === 'AURUM') && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -135,6 +135,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         depositFee={farm.depositFeeBP}
         farmImage={farmImage}
         tokenSymbol={farm.tokenSymbol}
+        isCommunity={farm.isCommunity}
       />
       {!removed && (
         <Flex justifyContent='space-between' alignItems='center'>

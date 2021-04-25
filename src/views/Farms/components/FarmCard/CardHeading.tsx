@@ -9,6 +9,7 @@ export interface ExpandableSectionProps {
   risk?: number
   depositFee?: number
   farmImage?: string
+  isCommunity? : boolean 
   tokenSymbol?: string
 }
 
@@ -28,6 +29,7 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
   risk,
   farmImage,
   tokenSymbol,
+  isCommunity,
   depositFee,
 }) => {
   return (
@@ -36,10 +38,12 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
       <Flex flexDirection="column" alignItems="flex-end">
         <Heading mb="4px">{lpLabel}</Heading>
         <Flex justifyContent="center">
-          {depositFee === 0 ? <NoFeeTag /> : null}
-          {/* {isCommunityFarm ? <CommunityTag /> : <CoreTag />} */}
+          {depositFee === 0 ? <NoFeeTag /> : null}          
           {/* <RiskTag risk={risk} /> */}
           <MultiplierTag variant="secondary">{multiplier}</MultiplierTag>
+        </Flex>
+        <Flex justifyContent="center">
+          {isCommunity ? <CommunityTag/> : null}          
         </Flex>
       </Flex>
     </Wrapper>

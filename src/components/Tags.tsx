@@ -21,7 +21,7 @@ const CoreTag = () => (
 
 const CommunityTag = () => (
   <Tag variant='textSubtle' outline startIcon={<CommunityIcon />}>
-    Community
+    Partnership
   </Tag>
 )
 
