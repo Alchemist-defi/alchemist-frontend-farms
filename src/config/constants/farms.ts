@@ -35,6 +35,38 @@ const farms: FarmConfig[] = [
     quoteTokenAdresses: contracts.wbnb,
   },
   {
+    pid: 18,
+    risk: 5,
+    lpSymbol: 'MIST-AURUM LP',
+    lpAddresses: {
+      97: '',
+      56: '0xa71f0bb3c029d397b10685f884a3523da766827d',
+    },
+    tokenSymbol: 'MIST',
+    tokenAddresses: {
+      97: '',
+      56: '0x6f8FE12CC34398d15b7D5A5BA933E550DA1D099f',
+    },
+    quoteTokenSymbol: QuoteToken.AURUM,
+    quoteTokenAdresses: contracts.aurum,
+  },
+  {
+    pid: 19,
+    risk: 5,
+    lpSymbol: 'AURUM-BUSD LP',
+    lpAddresses: {
+      97: '',
+      56: '0xa3c4006d1957A09CF9b94Af683877aBA03DF1eC9',
+    },
+    tokenSymbol: 'AURUM',
+    tokenAddresses: {
+      97: '',
+      56: '0x49207BAA3a7332F0716788aa57B088D499bcc104',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
+  {
     pid: 2,
     risk: 3,
     lpSymbol: 'BNB-BUSD LP',
@@ -159,6 +191,23 @@ const farms: FarmConfig[] = [
     tokenAddresses: {
       97: '0xB8672B92100e8a25261aB0ae76789D05f66afd47',
       56: '0x6f8FE12CC34398d15b7D5A5BA933E550DA1D099f',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  } ,
+  {
+    pid: 20,
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'AURUM',
+    lpAddresses: {
+      97: '',
+      56: '0xa3c4006d1957A09CF9b94Af683877aBA03DF1eC9', // AURUM-BUSD LP
+    },
+    tokenSymbol: 'AURUM',
+    tokenAddresses: {
+      97: '',
+      56: '0x49207BAA3a7332F0716788aa57B088D499bcc104',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -299,6 +348,41 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
+  {
+    pid: 21,
+    risk: 5,
+    lpSymbol: 'MIST-BSCDOG LP',
+    lpAddresses: {
+      97: '',
+      56: '0x93fc52bc1189d9867520f80b8ebd51f87d317d54',
+    },
+    tokenSymbol: 'MIST',
+    tokenAddresses: {
+      97: '',
+      56: '0x6f8FE12CC34398d15b7D5A5BA933E550DA1D099f',
+    },
+    quoteTokenSymbol: QuoteToken.MIST,
+    quoteTokenAdresses: contracts.mist,
+    isCommunity: true,
+  },
+  {
+    pid: 22,
+    risk: 5,
+    lpSymbol: 'BNB-BSCDOG LP',
+    lpAddresses: {
+      97: '',
+      56: '0x598a58d9acf3b2a9c1409ba8e04525b585ac4477',
+    },
+    tokenSymbol: 'BNB',
+    tokenAddresses: {
+      97: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    isCommunity: true,
+  },
+  
 ]
 
 export default farms
