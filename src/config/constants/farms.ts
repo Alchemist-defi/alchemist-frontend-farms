@@ -47,8 +47,8 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x49207BAA3a7332F0716788aa57B088D499bcc104',
     },
-    quoteTokenSymbol: QuoteToken.MIST,
-    quoteTokenAdresses: contracts.mist,
+    quoteTokenSymbol: QuoteToken.CAKE,
+    quoteTokenAdresses: contracts.cake,
   },
   {
     pid: 19,
@@ -361,8 +361,8 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0xab329b1b7785be9f954bacfc7fa663ce9b36338d',
     },
-    quoteTokenSymbol: QuoteToken.MIST,
-    quoteTokenAdresses: contracts.mist,
+    quoteTokenSymbol: QuoteToken.CAKE,
+    quoteTokenAdresses: contracts.cake,
     isCommunity: true,
   },
   {

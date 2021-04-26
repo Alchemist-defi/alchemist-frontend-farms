@@ -12,6 +12,7 @@ import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
+import { getBalanceNumber , getActualValueInDecimal} from 'utils/formatBalance'
 import useI18n from 'hooks/useI18n'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import FarmTabButtons from './components/FarmTabButtons'
@@ -66,6 +67,8 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
         if (farm.quoteTokenSymbol === QuoteToken.BNB) {
           totalValue = totalValue.times(bnbPrice);
+        } else if ((farm.quoteTokenSymbol === QuoteToken.MIST)){
+          totalValue = totalValue.times(cakePrice);
         }
 
         if(totalValue.comparedTo(0) > 0){
