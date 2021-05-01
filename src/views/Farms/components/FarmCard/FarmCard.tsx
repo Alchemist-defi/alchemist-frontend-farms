@@ -109,6 +109,9 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
     if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
       return cakePrice.times(farm.lpTotalInQuoteToken)
     }
+    if (farm.quoteTokenSymbol === QuoteToken.MIST) {
+      return cakePrice.times(farm.lpTotalInQuoteToken)
+    }
     return farm.lpTotalInQuoteToken
   }, [bnbPrice, cakePrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
 
@@ -122,6 +125,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })
+
+  
 
   const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk } = farm
 

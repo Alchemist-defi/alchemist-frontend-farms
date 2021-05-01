@@ -69,7 +69,10 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           totalValue = totalValue.times(bnbPrice);
         } else if ((farm.quoteTokenSymbol === QuoteToken.MIST)){
           totalValue = totalValue.times(cakePrice);
+        } else if ((farm.quoteTokenSymbol === QuoteToken.CAKE)){
+          totalValue = totalValue.times(cakePrice);
         }
+
 
         if(totalValue.comparedTo(0) > 0){
           apy = apy.div(totalValue);
