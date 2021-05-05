@@ -34,7 +34,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'MIST Price Chart',
-        href: 'https://unidexbeta.app/bscCharting?token=0x6f8FE12CC34398d15b7D5A5BA933E550DA1D099f',
+        href: 'https://dex.guru/token/0x6f8fe12cc34398d15b7d5a5ba933e550da1d099f-bsc',
       },    
     ],
   },
@@ -49,6 +49,10 @@ const config: MenuEntry[] = [
       {
         label: 'Aurum Enchantment',
         href: 'https://www.aurum.alchemistdefi.com/vessels',
+      },
+      {
+        label: 'Aurum Spells',
+        href: 'https://www.aurum.alchemistdefi.com/spells',
       },
       {
         label: 'Aurum Price Chart',
