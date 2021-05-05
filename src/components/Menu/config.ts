@@ -34,7 +34,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'MIST Price Chart',
-        href: 'https://dex.guru/token/0x6f8fe12cc34398d15b7d5a5ba933e550da1d099f-bsc',
+        href: 'https://charts.bogged.finance/?token=0x6f8FE12CC34398d15b7D5A5BA933E550DA1D099f',
       },    
     ],
   },
@@ -56,7 +56,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Aurum Price Chart',
-        href: 'https://unidexbeta.app/bscCharting?token=0x49207BAA3a7332F0716788aa57B088D499bcc104',
+        href: 'https://charts.bogged.finance/?token=0x49207BAA3a7332F0716788aa57B088D499bcc104',
       },    
     ],
   },
