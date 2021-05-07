@@ -15,6 +15,7 @@ interface ApyCalculatorModalProps {
   quoteTokenAdresses?: Address
   quoteTokenSymbol?: string
   tokenAddresses: Address
+  isTokenOnly? : boolean
 }
 
 const Grid = styled.div`
@@ -41,9 +42,16 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   tokenAddresses,
   cakePrice,
   apy,
+  isTokenOnly
 }) => {
   const TranslateString = useI18n()
-  const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
+  let liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
+  let addButtonURL = `https://exchange.alchemistdefi.com/#/add/${liquidityUrlPathParts}`
+
+  if (isTokenOnly){
+    liquidityUrlPathParts = tokenAddresses[process.env.REACT_APP_CHAIN_ID]
+    addButtonURL = `https://exchange.alchemistdefi.com/#/swap?outputCurrency=${liquidityUrlPathParts}`
+  }
   const farmApy = apy.times(new BigNumber(100)).toNumber()
   const oneThousandDollarsWorthOfCake = 1000 / cakePrice.toNumber()
 
@@ -126,7 +134,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         )}
       </Description>
       <Flex justifyContent="center">
-        <LinkExternal href={`https://exchange.alchemistdefi.com/#/add/${liquidityUrlPathParts}`}>
+        <LinkExternal href={addButtonURL}>
           {TranslateString(999, 'Get')} {lpLabel}
         </LinkExternal>
       </Flex>
