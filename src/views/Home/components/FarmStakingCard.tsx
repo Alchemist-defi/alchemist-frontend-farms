@@ -96,29 +96,29 @@ const FarmedStakingCard = () => {
   const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
   const { onAurumReward } = useAurumAllHarvest(aurumBalancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
 
-  const harvestAllFarms = useCallback(async () => {
-    setPendingTx(true)
-    try {
-      await onReward()
-    } catch (error) {
-      // TODO: find a way to handle when the user rejects transaction or it fails
-    } finally {
-      setPendingTx(false)
-    }    
+  // const harvestAllFarms = useCallback(async () => {
+  //   setPendingTx(true)
+  //   try {
+  //     await onReward()
+  //   } catch (error) {
+  //     // TODO: find a way to handle when the user rejects transaction or it fails
+  //   } finally {
+  //     setPendingTx(false)
+  //   }    
 
-  }, [onReward])
+  // }, [onReward])
 
 
-  const harvestAllAurumFarms = useCallback(async () => {
-    setPendingTx(true)
-    try {
-      await onAurumReward()
-    } catch (error) {
-      // TODO: find a way to handle when the user rejects transaction or it fails
-    } finally {
-      setPendingTx(false)
-    }
-  }, [onAurumReward])
+  // const harvestAllAurumFarms = useCallback(async () => {
+  //   setPendingTx(true)
+  //   try {
+  //     await onAurumReward()
+  //   } catch (error) {
+  //     // TODO: find a way to handle when the user rejects transaction or it fails
+  //   } finally {
+  //     setPendingTx(false)
+  //   }
+  // }, [onAurumReward])
 
   
   const harvestAllCombinedFarms = useCallback(async () => {
