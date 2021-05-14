@@ -46,6 +46,21 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+
+  .token-tag {
+    font-family: 'Kanit', sans-serif;
+    position: absolute;
+    right: 20px;
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    background-color: #0088f6;
+    border-radius: 8px ;
+    border: #1b308a 2px solid;
+    padding: 2px 4px;
+    color: #fff;
+  }
 `
+
 
 export default GlobalStyle

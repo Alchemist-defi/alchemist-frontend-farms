@@ -41,7 +41,8 @@ const CakeStats = () => {
     <StyledCakeStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(534, 'Mist Stats')}
+        <div className="token-tag">DEFLATIONARY</div>
+          {TranslateString(534, 'MIST Stats')}
         </Heading>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'Mist Price')}</Text>

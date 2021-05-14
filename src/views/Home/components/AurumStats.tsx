@@ -41,7 +41,8 @@ const AurumStats = () => {
     <StyledAurumStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(999, 'Aurum Stats')}
+        <div className="token-tag">GOVERNANCE</div>
+          {TranslateString(999, 'AURUM Stats')}
         </Heading>
         <Row>
           <Text fontSize="14px">{TranslateString(999, 'Aurum Price')}</Text>

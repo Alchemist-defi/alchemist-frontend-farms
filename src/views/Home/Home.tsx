@@ -6,13 +6,14 @@ import Cookies from 'universal-cookie';
 import { useQueryParam, StringParam } from 'use-query-params';
 import Page from 'components/layout/Page'
 import FarmStakingCard from './components/FarmStakingCard'
-import LotteryCard from './components/LotteryCard'
+// import LotteryCard from './components/LotteryCard'
 import CakeStats from './components/CakeStats'
 import AurumStats from './components/AurumStats'
 import TotalValueLockedCard from './components/TotalValueLockedCard'
 import TwitterCard from './components/TwitterCard'
 import rot13 from '../../utils/encode'
 import { isAddress } from '../../utils/web3'
+import AurumMistDescCard from './components/AurumMistDescCard';
 
 const Hero = styled.div`
   align-items: center;
@@ -33,6 +34,27 @@ const Hero = styled.div`
     height: 165px;
     padding-top: 0;
   }  
+`
+
+
+const FullPageCard = styled(BaseLayout)`
+  align-items: stretch;
+  justify-content: stretch;
+  margin-bottom: 32px;
+  & > div {
+    grid-column: span 12;
+    width: 100%;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 8;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    & > div {
+      grid-column: span 12;
+    }
+  }
 `
 
 const CardCombined = styled(BaseLayout)`
@@ -99,6 +121,9 @@ const Home: React.FC = () => {
         </Heading>
         <Text>{TranslateString(999, 'Your alchemy lab, turning crypto into Mist and Digital Gold')}</Text>
       </Hero>
+      <FullPageCard>
+        <AurumMistDescCard/>
+      </FullPageCard>
       <div>
         <Cards>
           <FarmStakingCard />

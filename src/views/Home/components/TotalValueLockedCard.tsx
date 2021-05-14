@@ -69,7 +69,7 @@ const TotalValueLockedCard = () => {
           <CardValue fontSize="18px" value={mistTotalValue.toNumber()} prefix="$" decimals={0}/>          
         </Row>
         <Row>
-          <Text fontSize="18px">{TranslateString(999, 'Aurum TVL')}</Text>          
+          <Text fontSize="18px">{TranslateString(999, 'AURUM TVL')}</Text>          
           <CardValue fontSize="18px" value={aurumTotalValue.toNumber()} prefix="$" decimals={0}/>          
         </Row>
         <Row>
