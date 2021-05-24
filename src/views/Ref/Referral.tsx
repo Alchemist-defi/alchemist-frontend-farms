@@ -41,7 +41,7 @@ const Referral: React.FC = () => {
                         <Heading size="md">Alchemist party! 🎉 
                         </Heading>
                         <Heading> </Heading>
-                        <Heading size="md">Bring your mates to the MIST community and get great rewards. Everytime they stake in or unstake from LPs, you get a 10% commission of the transaction fees. This applies for only $MIST. </Heading>
+                        <Heading size="md">Bring your mates to the MIST community and get great rewards. Everytime they stake in or unstake from LPs, you get a 10% commission of the transaction fees. This only applies to $MIST contracts. </Heading>
                     </CardHeader>
                     <CardBody>
                         <Actions>
