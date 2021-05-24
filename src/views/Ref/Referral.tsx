@@ -35,10 +35,13 @@ const Referral: React.FC = () => {
     return (
         <Page>
             <Con>
-                <Heading size="xl" mb="24px">Alchemist&apos;s Guild Friendship Program</Heading>
+            <Heading size="xl" mb="24px">MIST For MATES</Heading>
                 <StyledCard>
                     <CardHeader>
-                        <Heading size="md">Alchemist party! 🎉  For the first 48 hours, refer friends and earn 10% of their earnings for LIFE ! Note that this will not decrease their rewards.</Heading>
+                        <Heading size="md">Alchemist party! 🎉 
+                        </Heading>
+                        <Heading> </Heading>
+                        <Heading size="md">Bring your mates to the MIST community and get great rewards. Everytime they stake in or unstake from LPs, you get a 10% commission of the transaction fees. This only applies to $MIST contracts. </Heading>
                     </CardHeader>
                     <CardBody>
                         <Actions>
