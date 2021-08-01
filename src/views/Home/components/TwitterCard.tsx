@@ -41,7 +41,7 @@ const TwitterCard = () => {
             height: '300',
             chrome: "noheader, nofooter",
             width: "400",
-            id: "profile:TwitterDev"
+            id: "profile:AlchemistDefi"
           }}
         />
       </CardBody>
