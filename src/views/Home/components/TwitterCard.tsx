@@ -40,7 +40,8 @@ const TwitterCard = () => {
           options={{
             height: '300',
             chrome: "noheader, nofooter",
-            width: "400"
+            width: "400",
+            id: "profile:TwitterDev"
           }}
         />
       </CardBody>
