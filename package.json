@@ -4,13 +4,11 @@
   "private": true,
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "start": "react-scripts start",
-    "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",    
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start --scripts-prepend-node-path",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "devbuild": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
+    "eject": "react-scripts eject"
   },
   "husky": {
     "hooks": {

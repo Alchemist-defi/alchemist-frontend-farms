@@ -61,6 +61,16 @@ const config: MenuEntry[] = [
     ],
   },
   {
+    label: 'Aurum NFTs',
+    icon: 'PoolIcon',
+    items: [
+      {
+        label: 'Mint',
+        href: '/nft',
+      },
+    ],
+  },
+  {
     label: 'MIST Referral',
     icon: 'MoonIcon',
     href: 'https://www.alchemistdefi.com/referrals',
