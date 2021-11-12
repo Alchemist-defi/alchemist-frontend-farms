@@ -61,12 +61,16 @@ const config: MenuEntry[] = [
     ],
   },
   {
-    label: 'Aurum NFTs',
+    label: 'Island of Auru',
     icon: 'PoolIcon',
     items: [
       {
         label: 'Mint',
         href: '/nft',
+      },
+      {
+        label: 'Breeding',
+        href: '/breeding',
       },
     ],
   },
