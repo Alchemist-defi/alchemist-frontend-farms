@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState, useContext, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import { BaseLayout, Heading } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import HowItWorks from './components/HowItWorks'
-import NftList from './components/NftList'
+// import NftList from './components/NftList'
 import NftProvider from './contexts/NftProvider'
 import NftInfo from './components/NftInfo'
 import AddNft from './components/AddNft'
@@ -38,6 +38,27 @@ const Cards = styled(BaseLayout)`
 `
 const Nft = () => {
   const TranslateString = useI18n()
+  // const [imageUrl, setImageUrl] = useState([])
+  // const [userNftToken, setUserNftToken] = useState([1])
+
+  // // const { allowanceToken, isApprovedForAll, userNftToken, reInitialize } = useContext(NftProviderContext)
+
+  // useEffect(() => {
+  //   if (userNftToken.length > 0) {
+  //     getImageUrl(userNftToken[0])
+  //   }
+  // }, [userNftToken])
+
+  // const getImageUrl = async (index) => {
+  //   axios
+  //     .get(`ipfs://QmX52P9CHRP3URUYWrT7BAvkTr8bK66dWWSNxFKKeojpsQ/${index}`)
+  //     .then((data) => {
+  //       console.log('%c 🍝 data: ', 'font-size:20px;background-color: #FCA650;color:#fff;', data)
+  //     })
+  //     .catch((e) => {
+  //       console.log('%c 🥃 e: ', 'font-size:20px;background-color: #E41A6A;color:#fff;', e)
+  //     })
+  // }
 
   return (
     <NftProvider>
@@ -56,7 +77,8 @@ const Nft = () => {
         <HowItWorks />
         {/* <NftList /> */}
         {/* <Cards> */}
-          <AddNft />
+        <AddNft />
+        {/* {userNftToken.length > 0 ? userNftToken.map((element) => ({ element })) : ''} */}
         {/* </Cards> */}
       </Page>
     </NftProvider>

@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react'
-import { QueryParamProvider } from 'use-query-params';
+import { QueryParamProvider } from 'use-query-params'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { ResetCSS } from '@pancakeswap-libs/uikit'
@@ -9,6 +9,8 @@ import { useAurumFetchPublicData } from 'state/aurumHooks'
 import GlobalStyle from './style/Global'
 import Menu from './components/Menu'
 import PageLoader from './components/PageLoader'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import NftGlobalNotification from './views/Nft/components/NftGlobalNotification'
 
@@ -44,51 +46,52 @@ const App: React.FC = () => {
   return (
     <Router>
       <QueryParamProvider ReactRouterRoute={Route}>
-      <ResetCSS />
-      <GlobalStyle />
-      <Menu>
-        <Suspense fallback={<PageLoader />}>
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/farms">
-              <Farms />
-            </Route>
-            <Route path="/nft">
-              <NFTs />
-            </Route>
-            <Route path="/nests">
-              <Farms tokenMode/>
-            </Route>
-              <Route path="/referrals">
-                  <Referral />
+        <ResetCSS />
+        <GlobalStyle />
+        <ToastContainer />
+        <Menu>
+          <Suspense fallback={<PageLoader />}>
+            <Switch>
+              <Route path="/" exact>
+                <Home />
               </Route>
-            {/* <Route path="/pools"> */}
-            {/*  <Pools /> */}
-            {/* </Route> */}
-            {/* <Route path="/lottery"> */}
-            {/*  <Lottery /> */}
-            {/* </Route> */}
-            {/* <Route path="/ifo"> */}
-            {/*  <Ifos /> */}
-            {/* </Route> */}
-            {/* <Route path="/nft"> */}
-            {/*  <Nft /> */}
-            {/* </Route> */}
-            {/* Redirect */}
-            {/* <Route path="/staking"> */}
-            {/*  <Redirect to="/pools" /> */}
-            {/* </Route> */}
-            {/* <Route path="/syrup"> */}
-            {/*  <Redirect to="/pools" /> */}
-            {/* </Route> */}
-            {/* 404 */}
-            <Route component={NotFound} />
-          </Switch>
-        </Suspense>
-      </Menu>
-      <NftGlobalNotification />
+              <Route path="/farms">
+                <Farms />
+              </Route>
+              <Route path="/nft">
+                <NFTs />
+              </Route>
+              <Route path="/nests">
+                <Farms tokenMode />
+              </Route>
+              <Route path="/referrals">
+                <Referral />
+              </Route>
+              {/* <Route path="/pools"> */}
+              {/*  <Pools /> */}
+              {/* </Route> */}
+              {/* <Route path="/lottery"> */}
+              {/*  <Lottery /> */}
+              {/* </Route> */}
+              {/* <Route path="/ifo"> */}
+              {/*  <Ifos /> */}
+              {/* </Route> */}
+              {/* <Route path="/nft"> */}
+              {/*  <Nft /> */}
+              {/* </Route> */}
+              {/* Redirect */}
+              {/* <Route path="/staking"> */}
+              {/*  <Redirect to="/pools" /> */}
+              {/* </Route> */}
+              {/* <Route path="/syrup"> */}
+              {/*  <Redirect to="/pools" /> */}
+              {/* </Route> */}
+              {/* 404 */}
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
+        </Menu>
+        <NftGlobalNotification />
       </QueryParamProvider>
     </Router>
   )

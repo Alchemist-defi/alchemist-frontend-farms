@@ -5,7 +5,9 @@ import useBlock from 'hooks/useBlock'
 import rabbitmintingfarm from 'config/abi/rabbitmintingfarm.json'
 import { RABBIT_MINTING_FARM_ADDRESS } from 'config/constants/nfts'
 import multicall from 'utils/multicall'
-import { getPancakeRabbitContract } from '../utils/contracts'
+import { getStakingNftContract, getErc20Contract } from '../utils/contracts'
+import { stakingNFTAddress, nftTokenAddress } from 'config/constants/stakingNft'
+import { useNftToken } from '../../../hooks/useContract'
 
 interface NftProviderProps {
   children: ReactNode
@@ -29,134 +31,43 @@ type State = {
 }
 
 type Context = {
-  canBurnNft: boolean
-  getTokenIds: (bunnyId: number) => number[]
+  // canBurnNft: boolean
+  // getTokenIds: (bunnyId: number) => number[]
   reInitialize: () => void
 } & State
 
-export const NftProviderContext = createContext<Context | null>(null)
+export const NftProviderContext = createContext(null)
 
 const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
   const isMounted = useRef(true)
-  const [state, setState] = useState<State>({
+  const [state, setState] = useState({
     isInitialized: false,
-    canClaim: false,
-    hasClaimed: false,
-    countBunniesBurnt: 0,
-    startBlockNumber: 0,
-    endBlockNumber: 0,
-    totalSupplyDistributed: 0,
-    currentDistributedSupply: 0,
-    balanceOf: 0,
-    bunnyMap: {},
+    allowanceToken: 0,
+    userNftToken: [],
+    isApprovedForAll: false,
   })
   const { account } = useWallet()
-  const currentBlock = useBlock()
 
   const { isInitialized } = state
-
-  // Static data
-  useEffect(() => {
-    const fetchContractData = async () => {
-      try {
-        const [
-          startBlockNumberArr,
-          endBlockNumberArr,
-          countBunniesBurntArr,
-          totalSupplyDistributedArr,
-          currentDistributedSupplyArr,
-        ] = await multicall(rabbitmintingfarm, [
-          { address: RABBIT_MINTING_FARM_ADDRESS, name: 'startBlockNumber' },
-          { address: RABBIT_MINTING_FARM_ADDRESS, name: 'endBlockNumber' },
-          { address: RABBIT_MINTING_FARM_ADDRESS, name: 'countBunniesBurnt' },
-          { address: RABBIT_MINTING_FARM_ADDRESS, name: 'totalSupplyDistributed' },
-          { address: RABBIT_MINTING_FARM_ADDRESS, name: 'currentDistributedSupply' },
-        ])
-
-        // TODO: Figure out why these are coming back as arrays
-        const [startBlockNumber]: [BigNumber] = startBlockNumberArr
-        const [endBlockNumber]: [BigNumber] = endBlockNumberArr
-        const [countBunniesBurnt]: [BigNumber] = countBunniesBurntArr
-        const [totalSupplyDistributed]: [BigNumber] = totalSupplyDistributedArr
-        const [currentDistributedSupply]: [BigNumber] = currentDistributedSupplyArr
-
-        setState((prevState) => ({
-          ...prevState,
-          isInitialized: true,
-          countBunniesBurnt: countBunniesBurnt.toNumber(),
-          startBlockNumber: startBlockNumber.toNumber(),
-          endBlockNumber: endBlockNumber.toNumber(),
-          currentDistributedSupply: currentDistributedSupply.toNumber(),
-          totalSupplyDistributed: totalSupplyDistributed.toNumber(),
-        }))
-      } catch (error) {
-        console.error('an error occured', error)
-      }
-    }
-
-    fetchContractData()
-  }, [isInitialized, setState])
-
+  const nftTokenContract = useNftToken(nftTokenAddress)
   // Data from the contract that needs an account
   useEffect(() => {
     const fetchContractData = async () => {
       try {
-        const pancakeRabbitsContract = getPancakeRabbitContract()
-        const [canClaimArr, hasClaimedArr] = await multicall(rabbitmintingfarm, [
-          { address: RABBIT_MINTING_FARM_ADDRESS, name: 'canClaim', params: [account] },
-          { address: RABBIT_MINTING_FARM_ADDRESS, name: 'hasClaimed', params: [account] },
-        ])
-        const balanceOf = await pancakeRabbitsContract.methods.balanceOf(account).call()
-        const [canClaim]: [boolean] = canClaimArr
-        const [hasClaimed]: [boolean] = hasClaimedArr
+        const tokenContract = getErc20Contract()
 
-        let bunnyMap: BunnyMap = {}
+        const allowanceToken = await tokenContract.methods.allowance(account, stakingNFTAddress).call()
 
-        // If the "balanceOf" is greater than 0 then retrieve the tokenIds
-        // owned by the wallet, then the bunnyId's associated with the tokenIds
-        if (balanceOf > 0) {
-          const getTokenIdAndBunnyId = async (index: number) => {
-            try {
-              const tokenId = await pancakeRabbitsContract.methods.tokenOfOwnerByIndex(account, index).call()
-              const bunnyId = await pancakeRabbitsContract.methods.getBunnyId(tokenId).call()
+        const userNftToken = await nftTokenContract.methods.tokenOwnedByUser(account).call()
 
-              return [parseInt(bunnyId, 10), parseInt(tokenId, 10)]
-            } catch (error) {
-              return null
-            }
-          }
-
-          const tokenIdPromises = []
-
-          for (let i = 0; i < balanceOf; i++) {
-            tokenIdPromises.push(getTokenIdAndBunnyId(i))
-          }
-
-          const tokenIdsOwnedByWallet = await Promise.all(tokenIdPromises)
-
-          // While improbable a wallet can own more than one of the same bunny so the format is:
-          // { [bunnyId]: [array of tokenIds] }
-          bunnyMap = tokenIdsOwnedByWallet.reduce((accum, association) => {
-            if (!association) {
-              return accum
-            }
-
-            const [bunnyId, tokenId] = association
-
-            return {
-              ...accum,
-              [bunnyId]: accum[bunnyId] ? [...accum[bunnyId], tokenId] : [tokenId],
-            }
-          }, {})
-        }
+        const isApprovedForAll = await nftTokenContract.methods.isApprovedForAll(account, stakingNFTAddress).call()
 
         setState((prevState) => ({
           ...prevState,
           isInitialized: true,
-          canClaim,
-          hasClaimed,
-          balanceOf,
-          bunnyMap,
+          allowanceToken,
+          userNftToken,
+          isApprovedForAll,
         }))
       } catch (error) {
         console.error('an error occured', error)
@@ -168,19 +79,6 @@ const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
     }
   }, [isInitialized, account, setState])
 
-  useEffect(() => {
-    return () => {
-      isMounted.current = false
-    }
-  }, [isMounted])
-
-  const canBurnNft = currentBlock <= state.endBlockNumber
-  const getTokenIds = (bunnyId: number) => state.bunnyMap[bunnyId]
-
-  /**
-   * Allows consumers to re-fetch all data from the contract. Triggers the effects.
-   * For example when a transaction has been completed
-   */
   const reInitialize = () => {
     // Only attempt to re-initialize if the component is still mounted
     // Transactions can take awhile so it is likely some users will navigate to another page
@@ -190,11 +88,7 @@ const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
     }
   }
 
-  return (
-    <NftProviderContext.Provider value={{ ...state, canBurnNft, getTokenIds, reInitialize }}>
-      {children}
-    </NftProviderContext.Provider>
-  )
+  return <NftProviderContext.Provider value={{ ...state, reInitialize }}>{children}</NftProviderContext.Provider>
 }
 
 export default NftProvider

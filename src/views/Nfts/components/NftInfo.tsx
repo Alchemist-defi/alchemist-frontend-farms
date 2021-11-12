@@ -17,7 +17,7 @@ const StyledNtfInfo = styled.div`
 `
 
 const NftInfo = () => {
-  const { canBurnNft } = useContext(NftProviderContext)
+  // const { canBurnNft } = useContext(NftProviderContext)
 
   // if (!canBurnNft) {
   //   return <NftProgressSimple />
