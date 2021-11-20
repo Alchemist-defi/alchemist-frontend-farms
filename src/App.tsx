@@ -12,6 +12,7 @@ import PageLoader from './components/PageLoader'
 
 import NftGlobalNotification from './views/Nft/components/NftGlobalNotification'
 import Breeding from 'views/Nfts/Breeding';
+import MyToken from 'views/Nfts/MyToken';
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page'
@@ -61,6 +62,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/breeding">
               <Breeding />
+            </Route>
+            <Route path="/my-token">
+              <MyToken />
             </Route>
             <Route path="/nests">
               <Farms tokenMode/>

@@ -124,8 +124,8 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
     <Card isActive={walletOwnsNft}>
       <Image src={`/images/nfts/${previewImage}`} alt={name} originalLink={walletOwnsNft ? originalImage : null} />
       <CardBody>
-        <Header>
-          <Heading>{name}</Heading>
+        {/* <Header> */}
+          {/* <Heading>{name}</Heading>
           {isInitialized && walletCanClaim && (
             <Tag outline variant="success">
               {TranslateString(526, 'Available')}
@@ -135,18 +135,20 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
             <Tag outline variant="secondary">
               {TranslateString(999, 'In Wallet')}
             </Tag>
-          )}
-        </Header>
-        {isInitialized && walletOwnsNft && (
+          )} */}
+          
+        {/* </Header> */}
+        {/* {isInitialized && walletOwnsNft && ( */}
+
           <Button fullWidth variant="secondary" mt="24px" onClick={onPresentTransferModal}>
             {TranslateString(999, 'Transfer')}
           </Button>
-        )}
-        {isInitialized && walletCanClaim && isSupplyAvailable && (
+        {/* )} */}
+        {/* {isInitialized && walletCanClaim && isSupplyAvailable && ( */}
           <Button fullWidth onClick={onPresentClaimModal} mt="24px">
             {TranslateString(999, 'Claim this NFT')}
           </Button>
-        )}
+        {/* )} */}
         {isInitialized && canBurnNft && walletOwnsNft && (
           <Button variant="danger" fullWidth onClick={onPresentBurnModal} mt="24px">
             {TranslateString(999, 'Trade in for CAKE')}

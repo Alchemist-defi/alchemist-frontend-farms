@@ -44,19 +44,19 @@ const Nft = () => {
       <Page>
         <StyledHero>
           <Heading as="h1" size="xxl" color="secondary" mb="24px">
-            NFTs
+            My Tokens
           </Heading>
-          <Heading as="h2" size="lg" color="secondary">
+          {/* <Heading as="h2" size="lg" color="secondary">
             {TranslateString(999, 'Trade in for CAKE, or keep for your collection!')}
-          </Heading>
+          </Heading> */}
         </StyledHero>
         {/* <Cards> */}
-        <NftInfo />
+        {/* <NftInfo /> */}
         {/* </Cards> */}
-        <HowItWorks />
+        {/* <HowItWorks /> */}
         <NftList />
         {/* <Cards> */}
-          <AddNft />
+          {/* <AddNft /> */}
         {/* </Cards> */}
       </Page>
     </NftProvider>
