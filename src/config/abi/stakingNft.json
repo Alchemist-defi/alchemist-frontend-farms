@@ -2,13 +2,7 @@
   {
     "inputs": [
       { "internalType": "address", "name": "_mistTokenAddress", "type": "address" },
-      { "internalType": "address", "name": "_nftContractAddress", "type": "address" },
-      { "internalType": "uint256", "name": "_rewardRate", "type": "uint256" },
-      { "internalType": "uint256", "name": "_rewardInterval", "type": "uint256" },
-      { "internalType": "uint256", "name": "_stakingFeeRate", "type": "uint256" },
-      { "internalType": "uint256", "name": "_unstakingFeeRate", "type": "uint256" },
-      { "internalType": "uint256", "name": "_cliffTime", "type": "uint256" },
-      { "internalType": "uint256", "name": "_minSSGTForGov", "type": "uint256" }
+      { "internalType": "address", "name": "_nftContractAddress", "type": "address" }
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
@@ -33,13 +27,13 @@
   },
   {
     "inputs": [],
-    "name": "MAX_SSGT_STAKE",
+    "name": "MAX_TOKEN_PER_NFT",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "amountToStake", "type": "uint256" }],
+    "inputs": [{ "internalType": "uint256", "name": "_tokenId", "type": "uint256" }],
     "name": "deposit",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -54,13 +48,6 @@
   },
   {
     "inputs": [],
-    "name": "getCliffTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "getDepositedTokensOfUser",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
@@ -68,8 +55,15 @@
   },
   {
     "inputs": [],
-    "name": "getMinSSGTForGovernance",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "getMISTGovernanceTokenAddress",
+    "outputs": [{ "internalType": "contract OWLNFT", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getMISTTokenAddress",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -77,41 +71,6 @@
     "inputs": [],
     "name": "getNumberOfHolders",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "address", "name": "_holder", "type": "address" }],
-    "name": "getPendingDivs",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getRewardInterval",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getRewardRate",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getSSGTGovernanceTokenAddress",
-    "outputs": [{ "internalType": "contract MistGovernance", "name": "", "type": "address" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getSSGTTokenAddress",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -127,34 +86,6 @@
       { "internalType": "uint256[]", "name": "lastClaimedTimeStamps", "type": "uint256[]" },
       { "internalType": "uint256[]", "name": "stakedTokens", "type": "uint256[]" }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getStakingAndDaoAmount",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getStakingFeeRate",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getUnstakingFeeRate",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getUserSSGTPeggedByNFT",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -199,41 +130,6 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "_cliffTime", "type": "uint256" }],
-    "name": "setCliffTime",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "_minSSGTForGov", "type": "uint256" }],
-    "name": "setMinSSGTForGovernance",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "_rewardRate", "type": "uint256" }],
-    "name": "setRewardRate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "_rate", "type": "uint256" }],
-    "name": "setStakingFeeRate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "_rate", "type": "uint256" }],
-    "name": "setUnstakingFeeRate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "name": "stakingTime",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
@@ -243,13 +139,6 @@
   {
     "inputs": [],
     "name": "totalClaimedRewards",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "name": "totalEarnedTokens",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
@@ -275,31 +164,6 @@
   {
     "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
     "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint256", "name": "_amount", "type": "uint256" },
-      { "internalType": "uint256[]", "name": "_tokenId", "type": "uint256[]" },
-      { "internalType": "uint256", "name": "_type", "type": "uint256" }
-    ],
-    "name": "unstake",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "name": "userSSGTPeggedByNFT",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "amountToWithdraw", "type": "uint256" }],
-    "name": "withdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

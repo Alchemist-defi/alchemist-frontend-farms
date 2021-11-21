@@ -69,6 +69,14 @@ const config: MenuEntry[] = [
         href: '/nft',
       },
       {
+        label: 'My Token',
+        href: '/my-token',
+      },
+      {
+        label: 'Backstory',
+        href: 'https://islandofaura.com',
+      },
+      {
         label: 'Breeding',
         href: '/breeding',
       },

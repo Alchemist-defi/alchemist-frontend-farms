@@ -4,7 +4,7 @@ import { BaseLayout, Heading } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import HowItWorks from './components/HowItWorks'
-import NftList from './components/NftList'
+import MyNftList from './components/MyNftList'
 import NftProvider from './contexts/NftProvider'
 import NftInfo from './components/NftInfo'
 import AddNft from './components/AddNft'
@@ -54,9 +54,9 @@ const Nft = () => {
         {/* <NftInfo /> */}
         {/* </Cards> */}
         {/* <HowItWorks /> */}
-        <NftList />
+        <MyNftList />
         {/* <Cards> */}
-          {/* <AddNft /> */}
+        {/* <AddNft /> */}
         {/* </Cards> */}
       </Page>
     </NftProvider>

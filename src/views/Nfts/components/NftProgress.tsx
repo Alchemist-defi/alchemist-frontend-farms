@@ -30,43 +30,29 @@ const ProgressWrap = styled.div`
 `
 
 const NftProgress = () => {
-  const {
-    isInitialized,
-    currentDistributedSupply,
-    totalSupplyDistributed,
-    countBunniesBurnt,
-    startBlockNumber,
-    endBlockNumber,
-  } = useContext(NftProviderContext)
+  const { mintedToken } = useContext(NftProviderContext)
   const TranslateString = useI18n()
-  const currentBlock = useBlock()
-  const secondsRemaining = (endBlockNumber - currentBlock) * BSC_BLOCK_TIME
-  const timeLeft = formatTimePeriod(getTimePeriods(secondsRemaining), ['seconds'])
-  const totalBlocks = endBlockNumber - startBlockNumber
-  const progress = currentBlock > startBlockNumber ? ((currentBlock - startBlockNumber) / totalBlocks) * 100 : 5
 
   return (
     <Card>
       <CardBody>
         <ProgressWrap>
-          <Progress primaryStep={progress} />
+          <Progress primaryStep={1 / 490} />
         </ProgressWrap>
-        <TimeLeft>
-          {timeLeft ? TranslateString(999, `${timeLeft} left to trade in NFTs`) : TranslateString(999, 'Finished!')}
-        </TimeLeft>
+
         <InfoRow>
-          <Text>{TranslateString(999, "Total NFT's claimed")}:</Text>
+          <Text>{TranslateString(999, "Total NFT's")}:</Text>
           <Text>
-            <strong>{!isInitialized ? '...' : `${currentDistributedSupply}/${totalSupplyDistributed}`}</strong>
+            <strong>{490}</strong>
           </Text>
         </InfoRow>
         <InfoRow>
-          <Text>{TranslateString(999, "Total NFT's burned")}:</Text>
+          <Text>{TranslateString(999, "Total NFT's Minted")}:</Text>
           <Text>
-            <strong>{!isInitialized ? '...' : `${countBunniesBurnt}/${totalSupplyDistributed}`}</strong>
+            <strong>{mintedToken}</strong>
           </Text>
         </InfoRow>
-        <InfoRow>
+        {/* <InfoRow>
           <Text>{TranslateString(999, 'Can be traded until')}:</Text>
           <div>
             {!isInitialized ? (
@@ -79,7 +65,7 @@ const NftProgress = () => {
             )}{' '}
           </div>
         </InfoRow>
-        <Message>{TranslateString(999, 'NFTs can be traded in for CAKE until the above block height')}</Message>
+        <Message>{TranslateString(999, 'NFTs can be traded in for CAKE until the above block height')}</Message> */}
       </CardBody>
     </Card>
   )

@@ -4,7 +4,7 @@ import { Heading } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import HowItWorks from './components/HowItWorks'
-import NftList from './components/NftList'
+// import NftList from './components/NftList'
 import NftProvider from './contexts/NftProvider'
 import NftInfo from './components/NftInfo'
 
@@ -29,7 +29,7 @@ const Nft = () => {
           </Heading>
         </StyledHero>
         <NftInfo />
-        <NftList />
+        {/* <NftList /> */}
         <HowItWorks />
       </Page>
     </NftProvider>

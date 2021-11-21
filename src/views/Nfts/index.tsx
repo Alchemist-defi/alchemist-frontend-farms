@@ -53,10 +53,10 @@ const Nft = () => {
         {/* <Cards> */}
         <NftInfo />
         {/* </Cards> */}
-        <HowItWorks />
+        {/* <HowItWorks /> */}
         <NftList />
         {/* <Cards> */}
-          <AddNft />
+        {/* <AddNft /> */}
         {/* </Cards> */}
       </Page>
     </NftProvider>

@@ -16,6 +16,9 @@ import aurumMasterChef from 'config/abi/aurumMasterchef.json'
 import sousChef from 'config/abi/sousChef.json'
 import sousChefBnb from 'config/abi/sousChefBnb.json'
 
+import stakingNft from "config/abi/stakingNft.json"
+import nftToken from "config/abi/nftToken.json"
+
 const useContract = (abi: AbiItem, address: string, contractOptions?: ContractOptions) => {
   const web3 = useWeb3()
   const [contract, setContract] = useState(new web3.eth.Contract(abi, address, contractOptions))
@@ -80,6 +83,17 @@ export const useSousChef = (id) => {
   const rawAbi = config.poolCategory === PoolCategory.BINANCE ? sousChefBnb : sousChef
   const abi = (rawAbi as unknown) as AbiItem
   return useContract(abi, config.contractAddress[process.env.REACT_APP_CHAIN_ID])
+}
+
+export const useStakingNft = (address: string) => {
+  const stakingNftAbi = (stakingNft as unknown) as AbiItem
+  return useContract(stakingNftAbi, address)
+}
+
+
+export const useNftToken = (address: string) => {
+  const nftTokenAbi = (nftToken as unknown) as AbiItem
+  return useContract(nftTokenAbi, address)
 }
 
 export default useContract

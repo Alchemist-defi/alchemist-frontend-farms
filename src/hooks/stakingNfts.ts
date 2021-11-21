@@ -5,13 +5,12 @@ import { ethers } from 'ethers'
 import Web3 from 'web3'
 
 // approve staking
-export const useStakingDeposit = (stakingContract: Contract, depositAmount) => {
+export const useStakingDeposit = (stakingContract: Contract, tokenId) => {
   const { account } = useWallet()
-  const amount = parseFloat(depositAmount) * 10 ** 18
   const onDeposit = useCallback(async () => {
     try {
       const tx = await stakingContract.methods
-        .deposit(`${amount}`)
+        .deposit(tokenId)
         .send({ from: account })
       return tx
     } catch {

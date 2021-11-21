@@ -18,7 +18,7 @@ import NftInWalletCard from './NftInWalletCard'
  */
 const StatusCard = () => {
   const { account } = useWallet()
-  const { isInitialized, canClaim, hasClaimed, balanceOf } = useContext(NftProviderContext)
+  const { userToken, userTokeBalance, contractTokeBalance } = useContext(NftProviderContext)
   const TranslateString = useI18n()
 
   if (!account) {
@@ -33,19 +33,25 @@ const StatusCard = () => {
     )
   }
 
-  if (!isInitialized) {
-    return <Text>...</Text>
-  }
+  // if (!isInitialized) {
+  //   return <Text>...</Text>
+  // }
 
-  if (!hasClaimed && canClaim) {
-    return <YouWonCard />
-  }
+  // if (!hasClaimed && canClaim) {
+  //   return <YouWonCard />
+  // }
 
-  if (balanceOf > 0) {
-    return <NftInWalletCard />
-  }
+  // if (balanceOf > 0) {
+  //   return <NftInWalletCard />
+  // }
 
-  return <NoNftsToClaimCard />
+  return (
+    <NftInWalletCard
+      userToken={userToken}
+      contractTokeBalance={contractTokeBalance}
+      userTokeBalance={userTokeBalance}
+    />
+  )
 }
 
 export default StatusCard

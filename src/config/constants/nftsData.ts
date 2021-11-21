@@ -1,9 +1,8 @@
 import { Nft } from './types'
 
-export const stakingNFTAddress = '0xfb29538b3ff4332e439EC51e658a7BA32270f52C'
-export const tokenContractAddress = '0x689EE599FE87C8Cb79E6BC987fc2E2bD9F2269E8'
-export const nftTokenAddress = '0xea9388C270a33b41fCfB89CbD629D92f6a6555B3'
-
+export const RABBIT_MINTING_FARM_ADDRESS = '0x7c8b60d2b859a38c8B9b5B6CB4565485cb637c7a'
+export const PANCAKE_RABBITS_ADDRESS = '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07'
+export const MistTokenAddress = '0x689ee599fe87c8cb79e6bc987fc2e2bd9f2269e8'
 
 
 export const NFtImages = [
