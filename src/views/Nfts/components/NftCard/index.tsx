@@ -85,13 +85,14 @@ const NftCard = ({ nft, index, type }) => {
     try {
       const getOwner = async () => {
         const tokenOwner = await getOwnerOfToken(nft.tokenId)
+        console.log('%c 🌶 tokenOwner: ', 'font-size:20px;background-color: #93C0A4;color:#fff;', tokenOwner)
         setTokenAvailable(tokenOwner == stakingNFTAddress || tokenOwner == false ? false : true)
       }
       getOwner()
     } catch {
       setTokenAvailable(false)
     }
-  }, [])
+  }, [nft])
 
   // const onWithdraw = useStakingWithdrawWithNft(stakingNftContract)
 
@@ -286,7 +287,7 @@ const NftCard = ({ nft, index, type }) => {
             </Button>
           ) : (
             <Button fullWidth mt="24px" onClick={handelStaking} disabled={tokenAvailable}>
-              {TranslateString(999, 'Claim this NFT')}
+              {TranslateString(999, 'Stake')}
             </Button>
           )
         ) : (
@@ -307,7 +308,7 @@ const NftCard = ({ nft, index, type }) => {
                 handelWithdrawToken()
               }}
             >
-              {TranslateString(999, ' Withdraw Nft')}
+              {TranslateString(999, ' Withdraw NFT')}
             </Button>
           ) : (
             <Button fullWidth mt="24px" onClick={handelNftApprove} disabled={tokenAvailable}>
