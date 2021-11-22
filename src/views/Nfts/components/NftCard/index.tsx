@@ -311,7 +311,7 @@ const NftCard = ({ nft, index, type }) => {
               {TranslateString(999, ' Withdraw NFT')}
             </Button>
           ) : (
-            <Button fullWidth mt="24px" onClick={handelNftApprove} disabled={tokenAvailable}>
+            <Button fullWidth mt="24px" onClick={handelNftApprove}>
               {TranslateString(999, 'Approve Nft Token')}
             </Button>
           )
