@@ -47,8 +47,8 @@ const NftList = () => {
 
   return (
     <>
-      <div>
-        <Form.Select
+      <div className="row mt-4">
+         <div className="col-12 col-md-2 mb-2"><Form.Select
           aria-label="Default select example"
           value={Level}
           id="as"
@@ -63,7 +63,9 @@ const NftList = () => {
           <option value={4}>Four</option>
           <option value={5}>Five</option>
         </Form.Select>
-        <Form.Select
+        </div>
+         <div className="col-12 col-md-2 mb-2"><Form.Select
+
           aria-label="Default select example"
           value={Breed}
           id="asads"
@@ -77,7 +79,10 @@ const NftList = () => {
           <option value={3}>Three</option>
           <option value={4}>Four</option>
         </Form.Select>
-        <Form.Select
+        </div>
+
+         <div className="col-12 col-md-2 mb-2"><Form.Select
+
           aria-label="Default select example"
           value={Claw}
           id="asdasd"
@@ -90,7 +95,10 @@ const NftList = () => {
           <option value="AVERAGE">AVERAGE</option>
           <option value="MYSTICAL">MYSTICAL</option>
         </Form.Select>
-        <Form.Select
+        </div>
+
+         <div className="col-12 col-md-2 mb-2"><Form.Select
+
           aria-label="Default select example"
           value={Wingspan}
           id="saddas"
@@ -103,17 +111,23 @@ const NftList = () => {
           <option value="AVERAGE">AVERAGE</option>
           <option value="MYSTICAL">MYSTICAL</option>
         </Form.Select>
-        <Form.Select aria-label="Default select example">
+        </div>
+
+        <div className="col-12 col-md-2 mb-2">
+        <Form.Select aria-label="Default select example"        
+
           value={Sight}
           id="adsas" onChange=
           {(e) => {
             setSight(e.target.value)
-          }}
+          }}>
           <option value="null">Sight</option>
           <option value="LEGENDARY">LEGENDARY</option>
           <option value="AVERAGE">AVERAGE</option>
           <option value="MYSTICAL">MYSTICAL</option>
         </Form.Select>
+        </div>
+
       </div>
       <NftGrid>
         {nftData.map((element, index) => (
