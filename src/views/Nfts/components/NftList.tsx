@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form'
 
 const NftList = () => {
   const [page, setPage] = useState(1)
-  const [sizePerPage, setSizePerPage] = useState(3)
+  const [sizePerPage, setSizePerPage] = useState(9)
   const [nftData, setNftData] = useState([])
 
   const [totalPage, setTotalPage] = useState(nfts.length / sizePerPage)
@@ -20,7 +20,6 @@ const NftList = () => {
   const [Claw, setClaw] = useState(null)
   const [Wingspan, setWingspan] = useState(null)
   const [Sight, setSight] = useState(null)
-
   useEffect(() => {
     setNftData([])
     let mainData = nfts
@@ -42,7 +41,7 @@ const NftList = () => {
 
     let data = mainData.slice((page - 1) * sizePerPage, (page - 1) * sizePerPage + sizePerPage)
     setNftData(data)
-    setTotalPage(mainData.length / sizePerPage)
+    setTotalPage(Math.floor(mainData.length / sizePerPage))
   }, [page, Level, Breed, Claw, Wingspan, Sight])
 
   return (
@@ -138,6 +137,7 @@ const NftList = () => {
                 <NftCard nft={element} index={index} type="ALL" />
               </div>
             ))}
+
           </NftGrid>
         </div>
       </div>
