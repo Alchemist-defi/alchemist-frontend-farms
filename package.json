@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "start": "react-scripts start --scripts-prepend-node-path",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start --scripts-prepend-node-path",
     "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "devbuild": "react-scripts build",
     "test": "react-scripts test",

@@ -1,4 +1,7 @@
 import { Nft } from './types'
+import bread0 from "../../images/bread0.png"
+import bread1 from "../../images/bread1.png"
+import bread2 from "../../images/bread2.jpeg"
 
 export const stakingNFTAddress = '0xfb29538b3ff4332e439EC51e658a7BA32270f52C'
 export const tokenContractAddress = '0x689EE599FE87C8Cb79E6BC987fc2E2bD9F2269E8'
@@ -7,10 +10,7 @@ export const nftTokenAddress = '0xea9388C270a33b41fCfB89CbD629D92f6a6555B3'
 
 
 export const NFtImages = [
-  'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/swapsies.png',
-  'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/drizzle.png',
-  'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/blueberries.png',
-  'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/circular.png',
+    bread0, bread1, bread2
 ]
 
 
