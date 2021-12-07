@@ -76,10 +76,10 @@ const config: MenuEntry[] = [
         label: 'Backstory',
         href: 'https://islandofaura.com',
       },
-      {
-        label: 'Breeding',
-        href: '/breeding',
-      },
+      // {
+      //   label: 'Breeding',
+      //   href: '/breeding',
+      // },
     ],
   },
   {

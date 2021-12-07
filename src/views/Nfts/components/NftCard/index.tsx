@@ -21,7 +21,7 @@ import { getStakingNftContract } from '../../utils/contracts'
 import ClaimNftModal from '../ClaimNftModal'
 import BurnNftModal from '../BurnNftModal'
 import TransferNftModal from '../TransferNftModal'
-import { NFtImages } from '../../../../config/constants/stakingNft'
+import Nfts, { NFtImages } from '../../../../config/constants/stakingNft'
 import { toast } from 'react-toastify'
 import { useStakingApprove } from '../../../../hooks/useApprove'
 import { useERC20, useStakingNft, useNftToken } from 'hooks/useContract'
@@ -85,7 +85,6 @@ const NftCard = ({ nft, index, type }) => {
     try {
       const getOwner = async () => {
         const tokenOwner = await getOwnerOfToken(nft.tokenId)
-        console.log('%c 🌶 tokenOwner: ', 'font-size:20px;background-color: #93C0A4;color:#fff;', tokenOwner)
         setTokenAvailable(tokenOwner == stakingNFTAddress || tokenOwner == false ? false : true)
       }
       getOwner()
@@ -99,6 +98,25 @@ const NftCard = ({ nft, index, type }) => {
   // const onNftApprove = onApproveNftToken(nftTokenContract, stakingNFTAddress)
 
   const TranslateString = useI18n()
+
+  const checkUserSameToken = () => {
+    return new Promise((resolve) => {
+      const selectedNftData = Nfts[parseInt(nft.tokenId) - 1]
+      console.log('%c 🍑 selectedNftData: ', 'font-size:20px;background-color: #33A5FF;color:#fff;', selectedNftData)
+      if (userNftToken.length > 0) {
+        userNftToken.forEach((element) => {
+          const userNftData = Nfts[parseInt(element) - 1]
+          if (userNftData.level == selectedNftData.level && userNftData.breed == selectedNftData.breed) {
+            resolve(false)
+          } else {
+            resolve(true)
+          }
+        })
+      } else {
+        resolve(true)
+      }
+    })
+  }
 
   const handleApprove = useCallback(async () => {
     try {
@@ -124,16 +142,20 @@ const NftCard = ({ nft, index, type }) => {
   const handelStaking = useCallback(async () => {
     try {
       setsLoading(true)
-
-      // setRequestedApproval(true)
-      const txHash = await onDeposit()
-      // user rejected tx or didn't go thru
-      if (!txHash) {
-        toast.error('Error While Stake Token')
-        // setRequestedApproval(false)
+      const checkToken = await checkUserSameToken()
+      if (!checkToken) {
+        toast.error('You Have Already This Breed Of Token')
       } else {
-        reInitialize()
-        toast.success('Token Staked')
+        // setRequestedApproval(true)
+        const txHash = await onDeposit()
+        // user rejected tx or didn't go thru
+        if (!txHash) {
+          toast.error('Error While Stake Token')
+          // setRequestedApproval(false)
+        } else {
+          reInitialize()
+          toast.success('Token Staked')
+        }
       }
       setsLoading(false)
     } catch (e) {
