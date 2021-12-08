@@ -21,7 +21,7 @@ import { getStakingNftContract } from '../../utils/contracts'
 import ClaimNftModal from '../ClaimNftModal'
 import BurnNftModal from '../BurnNftModal'
 import TransferNftModal from '../TransferNftModal'
-import Nfts, { NFtImages } from '../../../../config/constants/stakingNft'
+import Nfts, { NFtImages, PRICELevel, startLevel } from '../../../../config/constants/stakingNft'
 import { toast } from 'react-toastify'
 import { useStakingApprove } from '../../../../hooks/useApprove'
 import { useERC20, useStakingNft, useNftToken } from 'hooks/useContract'
@@ -72,8 +72,9 @@ const NftCard = ({ nft, index, type }) => {
   const stakingNftContract = useStakingNft(stakingNFTAddress)
   const nftTokenContract = useNftToken(nftTokenAddress)
 
-  const { allowanceToken, isApprovedForAll, userNftToken, totalSupply, reInitialize, getOwnerOfToken } =
+  const { allowanceToken, userNftToken, isApprovedForAll, totalSupply, reInitialize, getOwnerOfToken, getUserToken } =
     useContext(NftProviderContext)
+
   const onApprove = useStakingApprove(erc20Contract, stakingNFTAddress)
   const onDeposit = useStakingDeposit(stakingNftContract, nft.tokenId)
 
@@ -100,13 +101,15 @@ const NftCard = ({ nft, index, type }) => {
   const TranslateString = useI18n()
 
   const checkUserSameToken = () => {
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
       const selectedNftData = Nfts[parseInt(nft.tokenId) - 1]
-      console.log('%c 🍑 selectedNftData: ', 'font-size:20px;background-color: #33A5FF;color:#fff;', selectedNftData)
-      if (userNftToken.length > 0) {
-        userNftToken.forEach((element) => {
-          const userNftData = Nfts[parseInt(element) - 1]
-          if (userNftData.level == selectedNftData.level && userNftData.breed == selectedNftData.breed) {
+      const userTokenList = await getUserToken()
+      console.log('%c 🍊 userTokenList: ', 'font-size:20px;background-color: #F5CE50;color:#fff;', userTokenList)
+      if (userTokenList.length > 0) {
+        userTokenList.forEach((element) => {
+          const userNftData = Nfts[element - 1]
+
+          if (userNftData.level === selectedNftData.level && userNftData.breed === selectedNftData.breed) {
             resolve(false)
           } else {
             resolve(true)
@@ -305,11 +308,18 @@ const NftCard = ({ nft, index, type }) => {
                 handleApprove()
               }}
             >
-              {TranslateString(999, ' Allow token')}
+              {TranslateString(999, ' Approve MIST')}
             </Button>
           ) : (
-            <Button fullWidth mt="24px" onClick={handelStaking} disabled={tokenAvailable}>
-              {TranslateString(999, 'Stake')}
+            <Button
+              fullWidth
+              mt="24px"
+              onClick={handelStaking}
+              disabled={nft.level < startLevel ? tokenAvailable : true}
+            >
+              {nft.level < startLevel
+                ? TranslateString(999, 'Stake Now')
+                : TranslateString(999, 'This Level Not Live Yet')}
             </Button>
           )
         ) : (
@@ -330,11 +340,11 @@ const NftCard = ({ nft, index, type }) => {
                 handelWithdrawToken()
               }}
             >
-              {TranslateString(999, ' Withdraw NFT')}
+              {TranslateString(999, ' Unstake NFT')}
             </Button>
           ) : (
             <Button fullWidth mt="24px" onClick={handelNftApprove}>
-              {TranslateString(999, 'Approve Nft Token')}
+              {TranslateString(999, 'Approve NFT')}
             </Button>
           )
         ) : (
@@ -367,29 +377,29 @@ const NftCard = ({ nft, index, type }) => {
         </DetailsButton>
         {state.isOpen && (
           <InfoBlock>
-            <Text as="h1" color="textSubtle" mb="16px" style={{ textAlign: 'center' }}>
+            {/* <Text as="h1" color="textSubtle" mb="16px" style={{ textAlign: 'center' }}>
               {nft.tokenId}
-            </Text>
+            </Text> */}
             <InfoRow>
-              <Text>{TranslateString(999, 'claw')}:</Text>
+              <Text>{TranslateString(999, 'Claw')}:</Text>
               <Value> {nft.claw}</Value>
             </InfoRow>
             <InfoRow>
-              <Text>{TranslateString(999, 'level')}:</Text>
+              <Text>{TranslateString(999, 'Level')}:</Text>
               <Value> {nft.level}</Value>
             </InfoRow>
             <InfoRow>
-              <Text>{TranslateString(999, 'wingspan')}:</Text>
+              <Text>{TranslateString(999, 'Wingspan')}:</Text>
               <Value> {nft.wingspan}</Value>
             </InfoRow>
             <InfoRow>
-              <Text>{TranslateString(999, 'sight')}:</Text>
+              <Text>{TranslateString(999, 'Sight')}:</Text>
               <Value> {nft.sight}</Value>
             </InfoRow>
 
             <InfoRow>
               <Text>{TranslateString(999, 'Value if traded in')}:</Text>
-              <Value>100 MIst</Value>
+              <Value>{PRICELevel[nft.level]} MIst</Value>
             </InfoRow>
             {/* <InfoRow>
               <Text>{TranslateString(999, 'Number minted')}:</Text>

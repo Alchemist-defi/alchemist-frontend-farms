@@ -112,6 +112,14 @@ const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
     }
   }
 
+  const getUserToken = async () => {
+    try {
+      return await await nftTokenContract.methods.tokenOwnedByUser(account).call()
+    } catch (error) {
+      return []
+    }
+  }
+
   const reInitialize = () => {
     // Only attempt to re-initialize if the component is still mounted
     // Transactions can take awhile so it is likely some users will navigate to another page
@@ -122,7 +130,7 @@ const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
   }
 
   return (
-    <NftProviderContext.Provider value={{ ...state, reInitialize, getOwnerOfToken }}>
+    <NftProviderContext.Provider value={{ ...state, reInitialize, getOwnerOfToken, getUserToken }}>
       {children}
     </NftProviderContext.Provider>
   )

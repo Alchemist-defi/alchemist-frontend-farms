@@ -5,7 +5,7 @@
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start --scripts-prepend-node-path",
-    "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "devbuild": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

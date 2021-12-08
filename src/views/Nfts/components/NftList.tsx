@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import orderBy from 'lodash/orderBy'
 import nfts from 'config/constants/stakingNft'
 import NftCard from './NftCard'
 import NftGrid from './NftGrid'
 import Pagination from 'react-responsive-pagination'
 import Form from 'react-bootstrap/Form'
+import { NftProviderContext } from '../contexts/NftProvider'
 
 const NftList = () => {
   const [page, setPage] = useState(1)
   const [sizePerPage, setSizePerPage] = useState(9)
   const [nftData, setNftData] = useState([])
+  const { userNftToken } = useContext(NftProviderContext)
 
   const [totalPage, setTotalPage] = useState(nfts.length / sizePerPage)
 
@@ -74,10 +76,10 @@ const NftList = () => {
             }}
           >
             <option value={0}>Breed</option>
-            <option value={1}>One</option>
-            <option value={2}>Two</option>
-            <option value={3}>Three</option>
-            <option value={4}>Four</option>
+            <option value={1}>Phoenix Owl</option>
+            <option value={2}>Barn Owl</option>
+            <option value={3}>Eagle Owl</option>
+            <option value={4}>Screech Owl</option>
           </Form.Select>
         </div>
 
@@ -90,10 +92,10 @@ const NftList = () => {
               setClaw(e.target.value)
             }}
           >
-            <option value="null">Claw</option>
+            <option value="null">Claw Size</option>
             <option value="LEGENDARY">LEGENDARY</option>
             <option value="AVERAGE">AVERAGE</option>
-            <option value="MYSTICAL">MYSTICAL</option>
+            <option value="MYSTICAL">MAGICAL</option>
           </Form.Select>
         </div>
 
@@ -137,7 +139,6 @@ const NftList = () => {
                 <NftCard nft={element} index={index} type="ALL" />
               </div>
             ))}
-
           </NftGrid>
         </div>
       </div>

@@ -4,7 +4,7 @@ import bread1 from "../../images/bread1.png"
 import bread2 from "../../images/bread2.jpeg"
 import bread3 from "../../images/bread3.jpeg"
 
-export const stakingNFTAddress = '0x2b6016403011115ACc77a2F4a0569549EE478978'
+export const stakingNFTAddress = '0x49Dc8e400c53ceC4E75b90829E537CF19F3C5A1D'
 export const tokenContractAddress = '0x689EE599FE87C8Cb79E6BC987fc2E2bD9F2269E8'
 export const nftTokenAddress = '0x468c8f3d6758224661bE868C735E53E2286B7509'
 
@@ -14,6 +14,11 @@ export const NFtImages = [
     bread0, bread1, bread2, bread3
 ]
 
+export const PRICELevel = [
+    0,500,400,300,200,100
+]
+
+export const startLevel = 2;
 
 const Nfts = [
     {

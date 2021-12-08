@@ -61,21 +61,22 @@ const config: MenuEntry[] = [
     ],
   },
   {
-    label: 'Island of Auru',
+    label: 'Island of Aura',
     icon: 'PoolIcon',
     items: [
-      {
-        label: 'Mint',
-        href: '/nft',
-      },
-      {
-        label: 'My Token',
-        href: '/my-token',
-      },
       {
         label: 'Backstory',
         href: 'https://islandofaura.com',
       },
+      {
+        label: 'Owls of Origin',
+        href: '/nft',
+      },
+      {
+        label: 'My Owls',
+        href: '/my-token',
+      },
+      
       // {
       //   label: 'Breeding',
       //   href: '/breeding',
