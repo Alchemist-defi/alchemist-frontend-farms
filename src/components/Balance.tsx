@@ -10,7 +10,7 @@ interface TextProps {
 }
 
 interface BalanceProps extends TextProps {
-  value?: number
+  value?: any
   decimals?: number
   unit?: string
 }

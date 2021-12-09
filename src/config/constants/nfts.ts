@@ -2,6 +2,7 @@ import { Nft } from './types'
 
 export const RABBIT_MINTING_FARM_ADDRESS = '0x7c8b60d2b859a38c8B9b5B6CB4565485cb637c7a'
 export const PANCAKE_RABBITS_ADDRESS = '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07'
+export const MistTokenAddress = '0x689ee599fe87c8cb79e6bc987fc2e2bd9f2269e8'
 
 const Nfts: Nft[] = [
   {

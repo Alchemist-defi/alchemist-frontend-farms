@@ -61,6 +61,29 @@ const config: MenuEntry[] = [
     ],
   },
   {
+    label: 'Island of Aura',
+    icon: 'PoolIcon',
+    items: [
+      {
+        label: 'Backstory',
+        href: 'https://islandofaura.com',
+      },
+      {
+        label: 'Owls of Origin',
+        href: '/nft',
+      },
+      {
+        label: 'My Owls',
+        href: '/my-token',
+      },
+      
+      // {
+      //   label: 'Breeding',
+      //   href: '/breeding',
+      // },
+    ],
+  },
+  {
     label: 'MIST Referral',
     icon: 'MoonIcon',
     href: 'https://www.alchemistdefi.com/referrals',
