@@ -4,9 +4,9 @@ import bread1 from "../../images/bread1.png"
 import bread2 from "../../images/bread2.jpeg"
 import bread3 from "../../images/bread3.jpeg"
 
-export const stakingNFTAddress = '0x512f3b2a36d017f322758D40fcEb08f417782019'
-export const tokenContractAddress = '0x689EE599FE87C8Cb79E6BC987fc2E2bD9F2269E8'
-export const nftTokenAddress = '0x6e5d824234760f60aD78B68E835f9a855cDea662'
+export const stakingNFTAddress = '0x87FaBF8a5dFe07BEdfDCe3e04ba128D62557aa00'
+export const tokenContractAddress = '0x6f8fe12cc34398d15b7d5a5ba933e550da1d099f'
+export const nftTokenAddress = '0x0EF3D46014EaA6eF662aFf43DD9f6eD47fa1eCF6'
 
 
 
@@ -21,6 +21,654 @@ export const PRICELevel = [
 export const startLevel = 2;
 
 const Nfts = [
+    {
+        "breed": "0",
+        "level": "1",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "349"
+    },
+    {
+        "breed": "0",
+        "level": "1",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "350"
+    },
+    {
+        "breed": "0",
+        "level": "1",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "351"
+    },
+    {
+        "breed": "0",
+        "level": "1",
+        "claw": "LEGENDARY",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "352"
+    },
+    {
+        "breed": "0",
+        "level": "1",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "353"
+    },
+    {
+        "breed": "0",
+        "level": "1",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "354"
+    },
+    {
+        "breed": "0",
+        "level": "1",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "355"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "356"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "357"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "358"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "359"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "LEGENDARY",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "360"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "361"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "362"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "363"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "364"
+    },
+    {
+        "breed": "0",
+        "level": "2",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "365"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "366"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "LEGENDARY",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "367"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "368"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "369"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "LEGENDARY",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "370"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "LEGENDARY",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "371"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "372"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "373"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "374"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "375"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "376"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "377"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "378"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "LEGENDARY",
+        "tokenId": "379"
+    },
+    {
+        "breed": "0",
+        "level": "3",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "380"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "LEGENDARY",
+        "tokenId": "381"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "382"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "383"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "384"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "385"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "LEGENDARY",
+        "tokenId": "386"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "387"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "388"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "389"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "390"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "391"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "392"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "393"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "394"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "395"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "396"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "397"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "398"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "399"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "400"
+    },
+    {
+        "breed": "0",
+        "level": "4",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "401"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "402"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "LEGENDARY",
+        "tokenId": "403"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "LEGENDARY",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "404"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "405"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "406"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "407"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "408"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "409"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "LEGENDARY",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "410"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "LEGENDARY",
+        "tokenId": "411"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "412"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "413"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "414"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "LEGENDARY",
+        "tokenId": "415"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "416"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "417"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "418"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "419"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "420"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "LEGENDARY",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "421"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "422"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "423"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "424"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "425"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "LEGENDARY",
+        "tokenId": "426"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "LEGENDARY",
+        "sight": "MYSTICAL",
+        "tokenId": "427"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "428"
+    },
+    {
+        "breed": "0",
+        "level": "5",
+        "claw": "MYSTICAL",
+        "wingspan": "MYSTICAL",
+        "sight": "MYSTICAL",
+        "tokenId": "429"
+    },
     {
         "breed": "1",
         "level": "1",
@@ -2804,654 +3452,6 @@ const Nfts = [
         "wingspan": "MYSTICAL",
         "sight": "MYSTICAL",
         "tokenId": "348"
-    },
-    {
-        "breed": "0",
-        "level": "1",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "349"
-    },
-    {
-        "breed": "0",
-        "level": "1",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "350"
-    },
-    {
-        "breed": "0",
-        "level": "1",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "351"
-    },
-    {
-        "breed": "0",
-        "level": "1",
-        "claw": "LEGENDARY",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "352"
-    },
-    {
-        "breed": "0",
-        "level": "1",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "353"
-    },
-    {
-        "breed": "0",
-        "level": "1",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "354"
-    },
-    {
-        "breed": "0",
-        "level": "1",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "355"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "356"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "357"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "358"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "359"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "LEGENDARY",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "360"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "361"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "362"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "363"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "364"
-    },
-    {
-        "breed": "0",
-        "level": "2",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "365"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "366"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "LEGENDARY",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "367"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "368"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "369"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "LEGENDARY",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "370"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "LEGENDARY",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "371"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "372"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "373"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "374"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "375"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "376"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "377"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "378"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "LEGENDARY",
-        "tokenId": "379"
-    },
-    {
-        "breed": "0",
-        "level": "3",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "380"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "LEGENDARY",
-        "tokenId": "381"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "382"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "383"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "384"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "385"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "LEGENDARY",
-        "tokenId": "386"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "387"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "388"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "389"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "390"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "391"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "392"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "393"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "394"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "395"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "396"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "397"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "398"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "399"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "400"
-    },
-    {
-        "breed": "0",
-        "level": "4",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "401"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "402"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "LEGENDARY",
-        "tokenId": "403"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "LEGENDARY",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "404"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "405"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "406"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "407"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "408"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "409"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "LEGENDARY",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "410"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "LEGENDARY",
-        "tokenId": "411"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "412"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "413"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "414"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "LEGENDARY",
-        "tokenId": "415"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "416"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "417"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "418"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "419"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "420"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "LEGENDARY",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "421"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "422"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "423"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "424"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "425"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "LEGENDARY",
-        "tokenId": "426"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "LEGENDARY",
-        "sight": "MYSTICAL",
-        "tokenId": "427"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "428"
-    },
-    {
-        "breed": "0",
-        "level": "5",
-        "claw": "MYSTICAL",
-        "wingspan": "MYSTICAL",
-        "sight": "MYSTICAL",
-        "tokenId": "429"
     }
 ]
 
