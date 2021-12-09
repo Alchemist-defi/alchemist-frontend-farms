@@ -6,12 +6,22 @@ import NftGrid from './NftGrid'
 import Pagination from 'react-responsive-pagination'
 import Form from 'react-bootstrap/Form'
 import { NftProviderContext } from '../contexts/NftProvider'
+import { stakingNFTAddress, tokenContractAddress, nftTokenAddress } from '../../../config/constants/stakingNft'
 
 const NftList = () => {
   const [page, setPage] = useState(1)
   const [sizePerPage, setSizePerPage] = useState(9)
   const [nftData, setNftData] = useState([])
-  const { userNftToken } = useContext(NftProviderContext)
+  const { userNftToken, getOwnerOfToken } = useContext(NftProviderContext)
+
+  const getOwner = async (tokenId) => {
+    try {
+      const tokenOwner = await getOwnerOfToken(tokenId)
+      return tokenOwner == stakingNFTAddress || tokenOwner == false ? false : true
+    } catch (error) {
+      return true
+    }
+  }
 
   const [totalPage, setTotalPage] = useState(nfts.length / sizePerPage)
 
@@ -25,6 +35,8 @@ const NftList = () => {
   useEffect(() => {
     setNftData([])
     let mainData = nfts
+    mainData = mainData.filter((e) => e.level == '1')
+
     if (Level != '') {
       mainData = mainData.filter((e) => e.level == Level)
     }
@@ -50,7 +62,7 @@ const NftList = () => {
   return (
     <>
       <div className="row mt-4">
-        <div className="col-12 col-md-2 mb-2">
+        {/* <div className="col-12 col-md-2 mb-2">
           <Form.Select
             aria-label="Default select example"
             value={Level}
@@ -66,7 +78,7 @@ const NftList = () => {
             <option value={4}>Four</option>
             <option value={5}>Five</option>
           </Form.Select>
-        </div>
+        </div> */}
         <div className="col-12 col-md-2 mb-2">
           <Form.Select
             aria-label="Default select example"
@@ -96,7 +108,7 @@ const NftList = () => {
             <option value="null">Claw Size</option>
             <option value="LEGENDARY">LEGENDARY</option>
             <option value="AVERAGE">AVERAGE</option>
-            <option value="MYSTICAL">MAGICAL</option>
+            <option value="MYSTICAL">MYSTICAL</option>
           </Form.Select>
         </div>
 

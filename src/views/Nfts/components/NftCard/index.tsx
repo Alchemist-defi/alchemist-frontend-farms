@@ -76,7 +76,7 @@ const NftCard = ({ nft, index, type }) => {
     useContext(NftProviderContext)
 
   const onApprove = useStakingApprove(erc20Contract, stakingNFTAddress)
-  const onDeposit = useStakingDeposit(stakingNftContract, nft.tokenId)
+  const onDeposit = useStakingDeposit(stakingNftContract)
 
   const onWithdraw = useStakingWithdrawWithNft(stakingNftContract)
 
@@ -142,7 +142,7 @@ const NftCard = ({ nft, index, type }) => {
     }
   }, [onApprove])
 
-  const handelStaking = useCallback(async () => {
+  const handelStaking = async () => {
     try {
       setsLoading(true)
       const checkToken = await checkUserSameToken()
@@ -150,7 +150,7 @@ const NftCard = ({ nft, index, type }) => {
         toast.error('You Have Already This Breed Of Token')
       } else {
         // setRequestedApproval(true)
-        const txHash = await onDeposit()
+        const txHash = await onDeposit(nft.tokenId)
         // user rejected tx or didn't go thru
         if (!txHash) {
           toast.error('Error While Stake Token')
@@ -167,7 +167,7 @@ const NftCard = ({ nft, index, type }) => {
 
       console.error(e)
     }
-  }, [onDeposit])
+  }
 
   const handelWithdrawToken = useCallback(async () => {
     try {

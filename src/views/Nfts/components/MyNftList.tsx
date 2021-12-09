@@ -28,7 +28,8 @@ const MyNftList = () => {
     let arr = []
     let userNftTokenData = userNftToken.slice(page * sizePerPage, sizePerPage)
     userNftTokenData.forEach((element, index) => {
-      arr.push(nfts[element - 1])
+      const tokenData = nfts.filter((e) => e.tokenId == element)
+      arr.push(tokenData[0])
     })
     setNftData(arr)
   }, [page, sizePerPage, userNftToken])
