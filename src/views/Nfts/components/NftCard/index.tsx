@@ -276,7 +276,7 @@ const NftCard = ({ nft, index, type }) => {
 
   return (
     <Card isActive={false}>
-      <Image src={NFtImages[nft.breed ? nft.breed : 0]} alt="name" />
+      <Image src={NFtImages[parseInt(nft.breed) ? parseInt(nft.breed) : 0]} alt="name" />
       <CardBody>
         {/* <Header> */}
         {/* <Heading>{name}</Heading>
@@ -377,9 +377,26 @@ const NftCard = ({ nft, index, type }) => {
         </DetailsButton>
         {state.isOpen && (
           <InfoBlock>
-            {/* <Text as="h1" color="textSubtle" mb="16px" style={{ textAlign: 'center' }}>
-              {nft.tokenId}
-            </Text> */}
+            {type == 'MY-TOKEN' ? (
+              <Text as="h1" color="textSubtle" mb="16px" style={{ textAlign: 'center' }}>
+                {nft.tokenId}
+              </Text>
+            ) : (
+              ''
+            )}
+            {type == 'MY-TOKEN' ? (
+              <InfoRow>
+                <Text>{TranslateString(999, 'Breed')}:</Text>
+                <Value>
+                  {nft.breed == '0' ? 'Phoenix Owl' : ''}
+                  {nft.breed == '1' ? 'Barn Owl' : ''}
+                  {nft.breed == '2' ? 'Eagle Owl' : ''}
+                  {nft.breed == '3' ? 'Screech Owl' : ''}
+                </Value>
+              </InfoRow>
+            ) : (
+              ''
+            )}
             <InfoRow>
               <Text>{TranslateString(999, 'Claw')}:</Text>
               <Value> {nft.claw}</Value>
@@ -398,7 +415,10 @@ const NftCard = ({ nft, index, type }) => {
             </InfoRow>
 
             <InfoRow>
-              <Text>{TranslateString(999, 'Value if traded in')}:</Text>
+              <Text>
+                {type == 'ALL' ? TranslateString(999, 'Value if traded in') : TranslateString(999, 'Value if unstaked')}
+                :
+              </Text>
               <Value>{PRICELevel[nft.level]} MIst</Value>
             </InfoRow>
             {/* <InfoRow>

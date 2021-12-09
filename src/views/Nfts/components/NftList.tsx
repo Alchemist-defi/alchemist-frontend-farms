@@ -29,7 +29,7 @@ const NftList = () => {
       mainData = mainData.filter((e) => e.level == Level)
     }
     if (Breed != '') {
-      mainData = mainData.filter((e) => e.level == Level)
+      mainData = mainData.filter((e) => e.breed == Breed)
     }
     if (Claw) {
       mainData = mainData.filter((e) => e.claw == Claw)
@@ -41,6 +41,7 @@ const NftList = () => {
       mainData = mainData.filter((e) => e.sight == Sight)
     }
 
+    console.log('%c 🌯 mainData: ', 'font-size:20px;background-color: #B03734;color:#fff;', mainData)
     let data = mainData.slice((page - 1) * sizePerPage, (page - 1) * sizePerPage + sizePerPage)
     setNftData(data)
     setTotalPage(Math.floor(mainData.length / sizePerPage))
@@ -75,11 +76,11 @@ const NftList = () => {
               setBreed(e.target.value)
             }}
           >
-            <option value={0}>Breed</option>
-            <option value={1}>Phoenix Owl</option>
-            <option value={2}>Barn Owl</option>
-            <option value={3}>Eagle Owl</option>
-            <option value={4}>Screech Owl</option>
+            <option value={''}>Breed</option>
+            <option value={0}>Phoenix Owl</option>
+            <option value={1}>Barn Owl</option>
+            <option value={2}>Eagle Owl</option>
+            <option value={3}>Screech Owl</option>
           </Form.Select>
         </div>
 
@@ -134,11 +135,13 @@ const NftList = () => {
       <div className="row mt-4">
         <div className="col-12 col-md-12 mb-12">
           <NftGrid>
-            {nftData.map((element, index) => (
-              <div key={index}>
-                <NftCard nft={element} index={index} type="ALL" />
-              </div>
-            ))}
+            {nftData.length > 0
+              ? nftData.map((element, index) => (
+                  <div key={index}>
+                    <NftCard nft={element} index={index} type="ALL" />
+                  </div>
+                ))
+              : ''}
           </NftGrid>
         </div>
       </div>

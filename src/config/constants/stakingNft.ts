@@ -4,9 +4,9 @@ import bread1 from "../../images/bread1.png"
 import bread2 from "../../images/bread2.jpeg"
 import bread3 from "../../images/bread3.jpeg"
 
-export const stakingNFTAddress = '0x49Dc8e400c53ceC4E75b90829E537CF19F3C5A1D'
+export const stakingNFTAddress = '0x512f3b2a36d017f322758D40fcEb08f417782019'
 export const tokenContractAddress = '0x689EE599FE87C8Cb79E6BC987fc2E2bD9F2269E8'
-export const nftTokenAddress = '0x468c8f3d6758224661bE868C735E53E2286B7509'
+export const nftTokenAddress = '0x6e5d824234760f60aD78B68E835f9a855cDea662'
 
 
 
