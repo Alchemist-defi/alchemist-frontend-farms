@@ -21,7 +21,7 @@ import { getStakingNftContract } from '../../utils/contracts'
 import ClaimNftModal from '../ClaimNftModal'
 import BurnNftModal from '../BurnNftModal'
 import TransferNftModal from '../TransferNftModal'
-import Nfts, { NFtImages, PRICELevel, startLevel } from '../../../../config/constants/stakingNft'
+import Nfts, { NFtImages, PRICELevelPhoenix, PRICELevelAll, startLevel } from '../../../../config/constants/stakingNft'
 import { toast } from 'react-toastify'
 import { useStakingApprove } from '../../../../hooks/useApprove'
 import { useERC20, useStakingNft, useNftToken } from 'hooks/useContract'
@@ -384,19 +384,16 @@ const NftCard = ({ nft, index, type }) => {
             ) : (
               ''
             )}
-            {type == 'MY-TOKEN' ? (
-              <InfoRow>
-                <Text>{TranslateString(999, 'Breed')}:</Text>
-                <Value>
-                  {nft.breed == '0' ? 'Phoenix Owl' : ''}
-                  {nft.breed == '1' ? 'Barn Owl' : ''}
-                  {nft.breed == '2' ? 'Eagle Owl' : ''}
-                  {nft.breed == '3' ? 'Screech Owl' : ''}
-                </Value>
-              </InfoRow>
-            ) : (
-              ''
-            )}
+            <InfoRow>
+              <Text>{TranslateString(999, 'Breed')}:</Text>
+              <Value>
+                {nft.breed && nft.breed == '0' ? 'Phoenix Owl' : ''}
+                {nft.breed && nft.breed == '1' ? 'Barn Owl' : ''}
+                {nft.breed && nft.breed == '2' ? 'Eagle Owl' : ''}
+                {nft.breed && nft.breed == '3' ? 'Screech Owl' : ''}
+              </Value>
+            </InfoRow>
+
             <InfoRow>
               <Text>{TranslateString(999, 'Claw')}:</Text>
               <Value> {nft.claw}</Value>
@@ -416,10 +413,11 @@ const NftCard = ({ nft, index, type }) => {
 
             <InfoRow>
               <Text>
-                {type == 'ALL' ? TranslateString(999, 'Value if traded in') : TranslateString(999, 'Value if unstaked')}
-                :
+                {type == 'ALL' ? TranslateString(999, 'MIST to stake') : TranslateString(999, 'Value if unstaked')}:
               </Text>
-              <Value>{PRICELevel[nft.level]} MIst</Value>
+              <Value>
+                {nft.breed && nft.breed == '0' ? PRICELevelPhoenix[nft.level] : PRICELevelAll[nft.level]} MIst
+              </Value>
             </InfoRow>
             {/* <InfoRow>
               <Text>{TranslateString(999, 'Number minted')}:</Text>

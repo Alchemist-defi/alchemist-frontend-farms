@@ -14,8 +14,11 @@ export const NFtImages = [
     bread0, bread1, bread2, bread3
 ]
 
-export const PRICELevel = [
-    0,500,400,300,200,100
+export const PRICELevelPhoenix = [
+    0,8500,6800,5400,4300,3400
+]
+export const PRICELevelAll = [
+    0,5100,4100,3250,2600,2050
 ]
 
 export const startLevel = 2;
