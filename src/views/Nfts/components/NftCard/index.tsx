@@ -86,6 +86,7 @@ const NftCard = ({ nft, index, type }) => {
     try {
       const getOwner = async () => {
         const tokenOwner = await getOwnerOfToken(nft.tokenId)
+
         setTokenAvailable(tokenOwner == stakingNFTAddress || tokenOwner == false ? false : true)
       }
       getOwner()
