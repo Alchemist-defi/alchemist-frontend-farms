@@ -21,7 +21,7 @@ export const PRICELevelAll = [
     0,5100,4100,3250,2600,2050
 ]
 
-export const startLevel = 2;
+export const startLevel = 3;
 
 const Nfts = [
     {

@@ -72,8 +72,16 @@ const NftCard = ({ nft, index, type }) => {
   const stakingNftContract = useStakingNft(stakingNFTAddress)
   const nftTokenContract = useNftToken(nftTokenAddress)
 
-  const { allowanceToken, userNftToken, isApprovedForAll, totalSupply, reInitialize, getOwnerOfToken, getUserToken } =
-    useContext(NftProviderContext)
+  const {
+    allowanceToken,
+    userNftToken,
+    isApprovedForAll,
+    totalSupply,
+    userTokeBalance,
+    reInitialize,
+    getOwnerOfToken,
+    getUserToken,
+  } = useContext(NftProviderContext)
 
   const onApprove = useStakingApprove(erc20Contract, stakingNFTAddress)
   const onDeposit = useStakingDeposit(stakingNftContract)
@@ -105,7 +113,6 @@ const NftCard = ({ nft, index, type }) => {
     return new Promise(async (resolve) => {
       const selectedNftData = Nfts[parseInt(nft.tokenId) - 1]
       const userTokenList = await getUserToken()
-      console.log('%c 🍊 userTokenList: ', 'font-size:20px;background-color: #F5CE50;color:#fff;', userTokenList)
       if (userTokenList.length > 0) {
         userTokenList.forEach((element) => {
           const userNftData = Nfts[element - 1]
@@ -150,15 +157,19 @@ const NftCard = ({ nft, index, type }) => {
       if (!checkToken) {
         toast.error('You Have Already This Breed Of Token')
       } else {
-        // setRequestedApproval(true)
-        const txHash = await onDeposit(nft.tokenId)
-        // user rejected tx or didn't go thru
-        if (!txHash) {
-          toast.error('Error While Stake Token')
-          // setRequestedApproval(false)
+        if (userTokeBalance < nft.breed && nft.breed == '0' ? PRICELevelPhoenix[nft.level] : PRICELevelAll[nft.level]) {
+          toast.error(`Insuffiecient MIST token amount`)
         } else {
-          reInitialize()
-          toast.success('Token Staked')
+          // setRequestedApproval(true)
+          const txHash = await onDeposit(nft.tokenId)
+          // user rejected tx or didn't go thru
+          if (!txHash) {
+            toast.error('Error While Stake Token')
+            // setRequestedApproval(false)
+          } else {
+            reInitialize()
+            toast.success('Token Staked')
+          }
         }
       }
       setsLoading(false)
@@ -170,7 +181,7 @@ const NftCard = ({ nft, index, type }) => {
     }
   }
 
-  const handelWithdrawToken = useCallback(async () => {
+  const handelWithdrawToken = async () => {
     try {
       setsLoading(true)
 
@@ -192,7 +203,7 @@ const NftCard = ({ nft, index, type }) => {
       console.error(e)
       toast.error('Error While Withdraw Token')
     }
-  }, [onWithdraw])
+  }
 
   const handelNftApprove = useCallback(async () => {
     try {
@@ -333,14 +344,7 @@ const NftCard = ({ nft, index, type }) => {
               {TranslateString(999, 'Loading...')}
             </Button>
           ) : isApprovedForAll ? (
-            <Button
-              fullWidth
-              variant="secondary"
-              mt="24px"
-              onClick={() => {
-                handelWithdrawToken()
-              }}
-            >
+            <Button fullWidth variant="secondary" mt="24px" onClick={handelWithdrawToken}>
               {TranslateString(999, ' Unstake NFT')}
             </Button>
           ) : (
@@ -417,7 +421,7 @@ const NftCard = ({ nft, index, type }) => {
                 {type == 'ALL' ? TranslateString(999, 'MIST to stake') : TranslateString(999, 'Value if unstaked')}:
               </Text>
               <Value>
-                {nft.breed && nft.breed == '0' ? PRICELevelPhoenix[nft.level] : PRICELevelAll[nft.level]} MIst
+                {nft.breed && nft.breed == '0' ? PRICELevelPhoenix[nft.level] : PRICELevelAll[nft.level]} MIST
               </Value>
             </InfoRow>
             {/* <InfoRow>

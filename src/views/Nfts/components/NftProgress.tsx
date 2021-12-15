@@ -37,13 +37,13 @@ const NftProgress = () => {
     <Card>
       <CardBody>
         <ProgressWrap>
-          <Progress primaryStep={1 / 499} />
+          <Progress primaryStep={429 / 37} />
         </ProgressWrap>
 
         <InfoRow>
           <Text>{TranslateString(999, "Total NFT's")}:</Text>
           <Text>
-            <strong>{499}</strong>
+            <strong>{429}</strong>
           </Text>
         </InfoRow>
         <InfoRow>

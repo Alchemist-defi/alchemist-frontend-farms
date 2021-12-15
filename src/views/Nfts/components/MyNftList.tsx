@@ -22,7 +22,6 @@ const MyNftList = () => {
   const [nftData, setNftData] = useState([])
 
   const { userNftToken } = useContext(NftProviderContext)
-  console.log('%c 🍌 userNftToken: ', 'font-size:20px;background-color: #2EAFB0;color:#fff;', userNftToken)
 
   useEffect(() => {
     let arr = []
